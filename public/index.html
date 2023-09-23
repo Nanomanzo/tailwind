@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html class="scroll-smooth max-w-screen-xl  mx-auto" lang="en">
+<heady>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"/>
+    <title>Platzi Travel</title>
+</heady>
+<body class="font-Montserrat bg-gray-100 dark:bg-gray-900" @apply="overflow-hidden animate-fade">
+
+  <header>
+    <nav class="w-full h-14 hidden max-w-screen-xl bg-slate-50 lg:flex p-4 justify-between fixed z-10 dark:bg-gray-800 z-20">
+      <div class="h-auto w-auto">
+        <p class="text-xl text-primary font-black dark:text-white">Platzi Travel</p>
+      </div>
+
+      <div class="flex space-x-8" @apply="pointer-events-none">
+        <a class="font-bold text-base text-primary dark:text-white" href="#home">Inicio</a>
+        <a class="font-bold text-base text-primary dark:text-white" href="#recommended">Recomendados</a>
+        <a class="font-bold text-base text-primary dark:text-white" href="#featured">Rentas</a>
+        <a class="font-bold text-base text-primary dark:text-white" href="#faqs">FAQS</a>
+        <a class="font-bold text-base text-primary dark:text-white" href="#footer">Sobre Nosotros</a>
+      </div>
+
+      <div class="space-x-6 mr-7">
+        <a href="#recommended">
+          <i class="fa-solid fa-magnifying-glass text-xl text-primary dark:text-white"></i>   
+        </a>
+
+        <button id="toggle">
+          <i class="fa-solid fa-moon text-xl text-primary dark:text-white"></i>
+        </button>
+
+        <button href="">
+          <i id="user-botton_header" class="fa-solid fa-user text-xl text-gray-200 dark:text-white"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div id="user_form_header" class="max-w-screen-xl mx-auto my-0 relative hidden z-10 animate-duration-300"  @apply="animate-fade">
+      <div id="form_header" class="w-[500px] h-screen bg-gray-800 dark:bg-black absolute right-0 z-10">
+        <div class="flex flex-col w-80 absolute top-1/4 left-1/2 transform -translate-x-1/2 transition-height duration-600 ease-in-out bg-slate-600 rounded-3xl h-[540px] items-center justify-center md:w-96" @apply="-translate-y-2/3 animate-fade">
+        
+          <div class="flex">
+            <h3 id="title-login_header" class="pb-8 text-zinc-200 text-4xl transform transition-transform duration-500">Inicia sesión&#160;</h3>
+            <span>
+              <i id="arrow_header" class="fa-solid fa-arrows-rotate text-primary transition duration-300 cursor-pointer text-4xl" @apply="rotate-180"></i>
+            </span>
+          </div>
+          
+          <form id="login_header" class="max-w-sm transform transition-transform duration-500" @apply="animate-rotate-y">
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                  E-mail
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="text" placeholder="Jane Doe">
+              </div>
+            </div>
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                  Contraseña
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs"  type="password" placeholder="******************">
+              </div>
+            </div>
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3"></div>
+              <label class="md:w-2/3 block text-white font-bold">
+                <input class="mr-2 leading-tight" type="checkbox">
+                <span class="text-sm">
+                  ¡Recuerda mi contraseña!
+                </span>
+              </label>
+            </div>
+            <div class="md:flex md:items-center">
+              <div class="md:w-1/3"></div>
+              <div class="md:w-2/3">
+                <button class="shadow bg-primary hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                  Login 
+                </button>
+              </div>
+            </div>
+          </form>
+  
+          <form id="registrarse_header" class="max-w-sm hidden transform transition-transform duration-500" @apply="animate-rotate-y">
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                  Nombre
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="text" placeholder="Jane Doe">
+              </div>
+            </div>
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                  Apellido
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="text" placeholder="Jane Doe">
+              </div>
+            </div>
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                  E-mail
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="text" placeholder="Jane Doe">
+              </div>
+            </div>
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-1/3">
+                <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                  Contraseña
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="password" placeholder="******************">
+              </div>
+            </div>
+            <div class="md:flex md:items-center">
+              <div class="md:w-1/3"></div>
+              <div class="md:w-2/3">
+                <button class="shadow bg-primary hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                  Registrarse
+                </button>
+              </div>
+            </div>        
+          </form>
+  
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+  <main @apply="opacity-25">
+    <section class="w-full h-auto mb-8">
+      <div class="lg:pt-14" id="home">
+        <div class="w-full h-3/4">
+          <div class="w-full h-full max-w-screen-xl flex flex-col absolute space-y-96 py-4 items-center sm:space-y-40 lg:space-y-0 lg:items-start lg:pt-20">
+            <input type="search" class="outline-none p-3 rounded-full shadow-sm transition duration-300 focus-within:shadow-sm focus:right-2 focus:w-11/12 lg:hidden text-center" placeholder="San Francisco">
+            <div class="hidden h-auto w-2/5 lg:flex pb-6">
+              <p class="text-4xl ml-16 font-bold text-black">Encuentra más ubicaciones como esta</p>
+            </div>
+            <button class="w-48 rounded-full bg-white text-lg text-primary shadow-sm font-semibold p-4 transition transition-all duration-500 ease-in-out hover:bg-primary hover:text-white transform hover:-translate-y-1 hover:scale-110 lg:ml-16">Explorar</button>
+          </div>
+          <div class="w-full h-full sm:h-96 sm:bg-sanFranciscoDesktop sm:bg-cover sm:bg-center ">
+            <img class="sm:hidden" src="./img/sanFrancisco.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="p-6" id="recommended">
+        <p class="text-3xl font-semibold text-primary dark:text-white">Recomendados</p>
+
+        <div class="w-auto h-72 items-center mt-6 overflow-x-auto overscroll-x-contain flex space-x-6 overflow-y-hidden">
+
+          <div class="card">
+            <div class="img bg-norway"></div>
+            <div class="card_description">
+              <p class="title_card">Norway</p>
+              <p class="subtitle_card">Paisajes Increibles</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img bg-new_york"></div>
+            <div class="card_description">
+              <p class="title_card">New York</p>
+              <p class="subtitle_card">Jungla de Concreto</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img bg-yosemite"></div>
+            <div class="card_description">
+              <p class="title_card">Yosemite</p>
+              <p class="subtitle_card">Un descanso del mundo</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img bg-seattle"></div>
+            <div class="card_description">
+              <p class="title_card">Seatle</p>
+              <p class="subtitle_card">Gran ciudad</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img bg-switzerland"></div>
+            <div class="card_description">
+              <p class="title_card">Switzerland</p>
+              <p class="subtitle_card">Hermosa cuidad</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img bg-norway"></div>
+            <div class="card_description">
+              <p class="title_card">Norway</p>
+              <p class="subtitle_card">Paisajes Increibles</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img bg-new_york"></div>
+            <div class="card_description">
+              <p class="title_card">New York</p>
+              <p class="subtitle_card">Jungla de Concreto</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img bg-yosemite"></div>
+            <div class="card_description">
+              <p class="title_card">Yosemite</p>
+              <p class="subtitle_card">Un descanso del mundo</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img bg-seattle"></div>
+            <div class="card_description">
+              <p class="title_card">Seatle</p>
+              <p class="subtitle_card">Gran ciudad</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img bg-switzerland"></div>
+            <div class="card_description">
+              <p class="title_card">Switzerland</p>
+              <p class="subtitle_card">Hermosa cuidad</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="px-6 h-auto w-full" id="featured">
+        <p class="text-3xl text-primary font-semibold pb-6 pt-2 mt-6 dark:text-white">Rentas Destacadas</p>
+
+        <div class="w-full h-full flex flex-col space-y-6 items-center justify-center lg:grid lg:grid-cols-5 lg:grid-rows-4 lg:gap-4 lg:space-y-0">
+          <div class="w-full h-96 bg-chicago bg-cover rounded-xl lg:col-[1/6] lg:row-[1/3] lg:mb-6  lg:bg-center lg:text-right">
+            <p class="bigCard_Title">Chicago</p>
+            <p class="bigCard_SubTitle">2 habitaciones, baño y cocina</p>
+          </div>
+
+          <div class="w-full h-96 bg-LA bg-cover rounded-xl lg:col-[1/3] lg:row-[3/5] lg:h-full lg:bg-center lg:text-right">
+            <p class="bigCard_Title">Los Angeles</p>
+            <p class="bigCard_SubTitle">4 habitaciones, 3 baños, cocina y piscina privada</p>
+          </div>
+
+          <div class="w-full h-96 bg-miami bg-cover rounded-xl lg:col-[3/6] lg:h-full lg:bg-center">
+            <p class="bigCard_Title">Miami</p>
+            <p class="bigCard_SubTitle">3 habitaciones, 2 baños y cocina</p>
+          </div>
+
+          <div class="w-full h-96 bg-bali bg-cover rounded-xl lg:col-[3/6] lg:h-full lg:bg-center lg:text-right">
+            <p class="bigCard_Title">Bali</p>
+            <p class="bigCard_SubTitle">3 habitaciones, 2 baños y piscina privada</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="w-full h-auto" id="faqs">
+        <div class="w-full h-full px-6 flex flex-col space-y-4">
+          <p class="text-3xl text-primary font-semibold mt-16 dark:text-white">FAQS</p>
+          <div>
+            <p class="faqs_title">Política de Cancelación</p>
+            <p class="faqs_description">Para estancias menores a una semana es importante avisar con 3 días de anticipación, de caso contario será sancionado.</p>
+          </div>
+          <div>
+            <p class="faqs_title">Métodos de pago</p>
+            <p class="faqs_description">Aceptamos distintos métodos de pago: VISA, MasterCard, American Express, Paypal y Binance</p>
+          </div>
+          <div>
+            <p class="faqs_title">Mascotas</p>
+            <p class="faqs_description">El tema de las mascotas dependerá directamente del anfitrión.</p>
+          </div>
+          <div>
+            <p class="faqs_title">Información de Seguridad</p>
+            <p class="faqs_description">Todas nuestras estancias cuentan con seguro en caso de accidentes</p>
+          </div>
+          <div>
+            <p class="faqs_title">Estancias Largas</p>
+            <p class="faqs_description">Contamos con estancias de hasta 3 meses, en este caso es requerido un anticipo con un monto del 50% del valor de la renta</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="w-full h-auto bg-gray-50 p-6 space-y-2 mb-16 lg:mb-0 dark:bg-gray-800">
+    <p class="text-2xl text-gray-500 font-bold">Acerca de Nosotros</p>
+    <ul class="space-y-2">
+      <li class="text-lg text-gray-400">Inversionistas</li>
+      <li class="text-lg text-gray-400">Empleos</li>
+      <li class="text-lg text-gray-400">Términos y Condiciones</li>
+      <li class="text-lg text-gray-400">Platzi Travel, Inc.</li>
+      <li class="text-lg text-gray-400">Síguenos</li>
+      <ul class="text-lg text-gray-400">
+        <i class="fa-brands fa-twitter text-4xl text-secondary"></i>
+        <i class="fa-brands fa-instagram text-4xl text-secondary ml-4"></i>
+      </ul>
+    </ul>
+  </footer>
+
+  <div class="w-full h-16 bg-gray-950 fixed left-0 bottom-0 shadow-md rounded-t-md lg:hidden transition-height duration-500 ease-in-out" id="tab_bar" @apply="h-full">
+    <div class="w-full h-16 flex space-x-8 items-center justify-center">
+      <a href="#home">
+        <i class="fa-solid fa-house text-4xl text-gray-200"></i>   
+      </a>
+  
+      <a href="#recommended">
+        <i class="fa-solid fa-magnifying-glass text-4xl text-primary"></i>   
+      </a>
+  
+      <a href="">
+        <i class="fa-solid fa-heart text-4xl text-gray-200"></i>
+      </a>
+  
+      <button id="toggle-sm">
+        <i class="fa-solid fa-moon text-4xl text-primary dark:text-gray-200"></i>
+      </button>
+  
+      <button href="" id="user-button">
+        <i class="fa-solid fa-user text-4xl text-gray-200"></i>
+      </button>
+    </div>
+    
+    <div class="h-full w-full flex justify-center relative">
+      <div id="user_form" class="flex flex-col w-80 absolute top-1/2 left-1/2 transform -translate-x-1/2 transition-height duration-500 ease-in-out bg-slate-600 rounded-3xl h-[540px] items-center justify-center md:w-96 mt-12" @apply="-translate-y-2/3 animate-fade-left">
+        
+        <div class="flex">
+          <h3 id="title-login" class="pb-8 text-zinc-200 text-4xl transform transition-transform duration-500">Inicia sesión&#160;</h3>
+          <span>
+            <i id="arrow" class="fa-solid fa-arrows-rotate text-primary transition duration-300 cursor-pointer text-4xl" @apply="rotate-180"></i>
+          </span>
+        </div>
+        
+        <form id="login" class="max-w-sm transform transition-transform duration-500" @apply="animate-rotate-y">
+          <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                E-mail
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="text" placeholder="Jane Doe">
+            </div>
+          </div>
+          <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                Contraseña
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs"  type="password" placeholder="******************">
+            </div>
+          </div>
+          <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3"></div>
+            <label class="md:w-2/3 block text-white font-bold">
+              <input class="mr-2 leading-tight" type="checkbox">
+              <span class="text-sm">
+                ¡Recuerda mi contraseña!
+              </span>
+            </label>
+          </div>
+          <div class="md:flex md:items-center">
+            <div class="md:w-1/3"></div>
+            <div class="md:w-2/3">
+              <button class="shadow bg-primary hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                Login 
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <form id="registrarse" class="max-w-sm hidden transform transition-transform duration-500" @apply="animate-rotate-y">
+          <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                Nombre
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="text" placeholder="Jane Doe">
+            </div>
+          </div>
+          <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                Apellido
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="text" placeholder="Jane Doe">
+            </div>
+          </div>
+          <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                E-mail
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="text" placeholder="Jane Doe">
+            </div>
+          </div>
+          <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+                Contraseña
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 max-w-xs" type="password" placeholder="******************">
+            </div>
+          </div>
+          <div class="md:flex md:items-center">
+            <div class="md:w-1/3"></div>
+            <div class="md:w-2/3">
+              <button class="shadow bg-primary hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                Registrarse
+              </button>
+            </div>
+          </div>        
+        </form>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <script src="./main.js"></script>
+
+</body>
+</html>

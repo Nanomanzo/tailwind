@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+    @apply w-48 h-64 shadow-md rounded-lg flex-none transform transition-all hover:-translate-y-4 hover:shadow-xl
+}
+
+.img {
+    @apply w-full h-3/5 rounded-t-lg bg-cover
+}
+
+.card_description {
+    @apply w-full h-2/5 rounded-b-lg
+}
+
+.title_card {
+    @apply font-bold text-xl px-4 py-2
+}
+
+.subtitle_card {
+    @apply text-lg px-4
+}
+
+.card:nth-last-of-type(even) .card_description {
+    @apply bg-white text-terciary dark:text-white dark:bg-gray-800
+}
+
+.card:nth-last-of-type(odd) .card_description {
+    @apply bg-secondary text-white dark:bg-gray-600
+}
+
+.bigCard_Title {
+    @apply text-3xl px-8 pt-8 pb-2 font-bold text-white
+}
+
+.bigCard_SubTitle {
+    @apply text-sm pl-8 text-white mr-8 font-semibold
+}
+
+.faqs_title {
+    @apply text-xl font-bold text-primary dark:text-white
+}
+
+.faqs_description {
+    @apply text-lg pt-2 dark:text-white pb-5
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #ccc;
+}
