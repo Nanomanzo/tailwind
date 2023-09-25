@@ -106,7 +106,6 @@ const titleLoginHeader = document.getElementById("title-login_header");
 arrowHeader.addEventListener('click', () => {
     // Aplica la animación de rotación a la flecha
     arrowHeader.classList.toggle('rotate-180');
-    console.log("flechas");
     
     // Programa la animación de rotación en los formularios
     if (isLoginFormVisible) {
@@ -118,7 +117,6 @@ arrowHeader.addEventListener('click', () => {
         void titleLoginHeader.offsetWidth; // Este truco reinicia la animación
         titleLoginHeader.classList.add('animate-rotate-y');
         titleLoginHeader.innerHTML = 'Registrate&nbsp;';
-        console.log("registrar");
     } else {
         loginHeader.classList.add('animate-rotate-y');
         loginHeader.classList.remove('hidden');
@@ -128,7 +126,6 @@ arrowHeader.addEventListener('click', () => {
         void titleLoginHeader.offsetWidth; // Este truco reinicia la animación
         titleLoginHeader.classList.add('animate-rotate-y');
         titleLoginHeader.innerHTML = 'Inicia Sesion&nbsp;';
-        console.log("inicio");
     }
 
     // Cambia el estado de visibilidad
@@ -145,12 +142,13 @@ const searchBottom = document.querySelector('#searchBottom')
 
 
 userBottomHeader.addEventListener('click', () => {
+    
 
     const scrollTop = window.scrollY || window.pageYOffset;
     // Establece la posición superior de user_form_header en relación al borde superior de la pantalla.
     userFormHeader.style.top = `${scrollTop}px`;
 
-    isLoginFormVisible = true;
+    //isLoginFormVisible = true;
     userFormHeader.classList.toggle('hidden');
     userFormHeader.classList.toggle('animate-fade');
     document.body.classList.toggle("overflow-hidden");
