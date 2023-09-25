@@ -43,6 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
             userForm.classList.toggle("-translate-y-2/3");
         }
     });
+
+    document.addEventListener("click", function () {
+        if (contentContainer.classList.contains("h-full")) {
+            contentContainer.classList.remove("h-full");
+            contentContainer.classList.add("h-16");
+
+        }
+    });
 });
 
 
@@ -51,8 +59,6 @@ const arrow = document.getElementById('arrow');
 const login = document.getElementById("login");
 const registrarse = document.getElementById("registrarse");
 const titleLogin = document.getElementById("title-login");
-
-
 let isLoginFormVisible = true;
 
 arrow.addEventListener('click', () => {
@@ -85,6 +91,12 @@ arrow.addEventListener('click', () => {
 });
 
 
+
+
+
+
+
+/* header */
 const arrowHeader = document.getElementById('arrow_header');
 const loginHeader = document.getElementById("login_header");
 const registrarseHeader = document.getElementById("registrarse_header");
@@ -94,6 +106,7 @@ const titleLoginHeader = document.getElementById("title-login_header");
 arrowHeader.addEventListener('click', () => {
     // Aplica la animación de rotación a la flecha
     arrowHeader.classList.toggle('rotate-180');
+    console.log("flechas");
     
     // Programa la animación de rotación en los formularios
     if (isLoginFormVisible) {
@@ -105,6 +118,7 @@ arrowHeader.addEventListener('click', () => {
         void titleLoginHeader.offsetWidth; // Este truco reinicia la animación
         titleLoginHeader.classList.add('animate-rotate-y');
         titleLoginHeader.innerHTML = 'Registrate&nbsp;';
+        console.log("registrar");
     } else {
         loginHeader.classList.add('animate-rotate-y');
         loginHeader.classList.remove('hidden');
@@ -114,6 +128,7 @@ arrowHeader.addEventListener('click', () => {
         void titleLoginHeader.offsetWidth; // Este truco reinicia la animación
         titleLoginHeader.classList.add('animate-rotate-y');
         titleLoginHeader.innerHTML = 'Inicia Sesion&nbsp;';
+        console.log("inicio");
     }
 
     // Cambia el estado de visibilidad
@@ -125,24 +140,27 @@ const userFormHeader = document.getElementById('user_form_header');
 const userBottomHeader = document.getElementById('user-botton_header');
 const main = document.querySelector('main');
 const links = document.querySelectorAll('.flex.space-x-8 a');
+const searchBottom = document.querySelector('#searchBottom')
 
 
 
 userBottomHeader.addEventListener('click', () => {
 
     const scrollTop = window.scrollY || window.pageYOffset;
-    
     // Establece la posición superior de user_form_header en relación al borde superior de la pantalla.
     userFormHeader.style.top = `${scrollTop}px`;
 
-
+    isLoginFormVisible = true;
     userFormHeader.classList.toggle('hidden');
     userFormHeader.classList.toggle('animate-fade');
     document.body.classList.toggle("overflow-hidden");
     main.classList.toggle("opacity-25");
+    searchBottom.classList.toggle("opacity-25");
+    searchBottom.classList.toggle('pointer-events-none');
     
     links.forEach(link => {
         link.classList.toggle('pointer-events-none');
+        link.classList.toggle("opacity-25");
       });
 
 });

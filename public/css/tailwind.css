@@ -741,8 +741,8 @@ select {
   top: 50%;
 }
 
-.top-1\/4 {
-  top: 25%;
+.top-\[15\%\] {
+  top: 15%;
 }
 
 .z-10 {
@@ -807,6 +807,10 @@ select {
   margin-top: 1.5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -853,6 +857,10 @@ select {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-80 {
+  height: 20rem;
 }
 
 .w-2\/5 {
@@ -1495,7 +1503,7 @@ select {
 
 ::-webkit-scrollbar {
   width: 5px;
-  height: 5px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {

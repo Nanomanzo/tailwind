@@ -19,7 +19,7 @@
 <body class="font-Montserrat bg-gray-100 dark:bg-gray-900" @apply="overflow-hidden animate-fade">
 
   <header>
-    <nav class="w-full h-14 hidden max-w-screen-xl bg-slate-50 lg:flex p-4 justify-between fixed z-10 dark:bg-gray-800 z-20">
+    <nav id="navBar" class="w-full h-14 hidden max-w-screen-xl bg-slate-50 lg:flex p-4 justify-between fixed z-10 dark:bg-gray-800 z-20">
       <div class="h-auto w-auto">
         <p class="text-xl text-primary font-black dark:text-white">Platzi Travel</p>
       </div>
@@ -33,7 +33,7 @@
       </div>
 
       <div class="space-x-6 mr-7">
-        <a href="#recommended">
+        <a id="searchBottom" href="#recommended">
           <i class="fa-solid fa-magnifying-glass text-xl text-primary dark:text-white"></i>   
         </a>
 
@@ -49,7 +49,7 @@
 
     <div id="user_form_header" class="max-w-screen-xl mx-auto my-0 relative hidden z-10 animate-duration-300"  @apply="animate-fade">
       <div id="form_header" class="w-[500px] h-screen bg-gray-800 dark:bg-black absolute right-0 z-10">
-        <div class="flex flex-col w-80 absolute top-1/4 left-1/2 transform -translate-x-1/2 transition-height duration-600 ease-in-out bg-slate-600 rounded-3xl h-[540px] items-center justify-center md:w-96" @apply="-translate-y-2/3 animate-fade">
+        <div class="flex flex-col w-80 absolute top-[15%] left-1/2 transform -translate-x-1/2 transition-height duration-600 ease-in-out bg-slate-600 rounded-3xl h-[540px] items-center justify-center md:w-96" @apply="-translate-y-2/3 animate-fade">
         
           <div class="flex">
             <h3 id="title-login_header" class="pb-8 text-zinc-200 text-4xl transform transition-transform duration-500">Inicia sesión&#160;</h3>
@@ -179,7 +179,7 @@
       <div class="p-6" id="recommended">
         <p class="text-3xl font-semibold text-primary dark:text-white">Recomendados</p>
 
-        <div class="w-auto h-72 items-center mt-6 overflow-x-auto overscroll-x-contain flex space-x-6 overflow-y-hidden">
+        <div class="w-auto h-80 items-center mt-3 overflow-x-auto overscroll-x-contain flex space-x-6 overflow-y-hidden">
 
           <div class="card">
             <div class="img bg-norway"></div>
